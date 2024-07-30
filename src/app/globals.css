@@ -86,6 +86,9 @@ body {
 }
 
 body {
+  color: var(--tg-theme-bg-color);
+  background: var(--tg-theme-bg-color);
+
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
