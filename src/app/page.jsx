@@ -7,8 +7,10 @@ export default function Home() {
   const [telegramApp, setTelegramApp] = useState(null);
 
   useEffect(() => {
-    setTelegramApp(window.Telegram.WebApp);
-  }, []);
+    if (window.Telegram) {
+      setTelegramApp(window.Telegram.WebApp);
+    }
+  }, [window]);
   useEffect(() => {
     if (telegramApp) {
       telegramApp.ready();

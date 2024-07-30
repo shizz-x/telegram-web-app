@@ -10,7 +10,12 @@ bot.on("message", (msg) => {
   bot.sendMessage(chatId, chatId.toString(), {
     reply_markup: {
       inline_keyboard: [
-        [{ text: "Sharks Web App", web_app: { url: "http://localhost:3000" } }],
+        [
+          {
+            text: "Sharks Web App",
+            web_app: { url: "https://telegram-web-app-omega.vercel.app/" },
+          },
+        ],
       ],
     },
   });
