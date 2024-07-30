@@ -5,15 +5,17 @@ import styles from "./page.module.css";
 
 export default function Home() {
   const [telegramApp, setTelegramApp] = useState(null);
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
     if (window.Telegram) {
       setTelegramApp(window.Telegram.WebApp);
     }
-  }, [window]);
+  }, []);
   useEffect(() => {
     if (telegramApp) {
       telegramApp.ready();
+      setUserData(telegramApp.initData);
     }
   }, [telegramApp]);
 
@@ -23,10 +25,11 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <button onClick={closeApp}>Close App</button>
       <div className={styles.description}>
-        <pre>{JSON.stringify(telegramApp)}</pre>
+        <pre>{JSON.stringify(userData, undefined, 2)}</pre>
+        <pre>{JSON.stringify(telegramApp, undefined, 2)}</pre>
       </div>
+      <button onClick={closeApp}>Close App</button>
     </main>
   );
 }

@@ -1,3 +1,4 @@
+"use client";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -7,10 +8,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <script
-          async
-          src="https://telegram.org/js/telegram-web-app.js"
-        ></script>
+        <script src="https://telegram.org/js/telegram-web-app.js"></script>
       </head>
       <body className={inter.className}>{children}</body>
     </html>
